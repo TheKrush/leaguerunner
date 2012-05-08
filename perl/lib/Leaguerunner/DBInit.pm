@@ -559,7 +559,7 @@ sub fresh_install
 	my ($self) = @_;
 	$self->_run_sql([
 		force_innodb => [q{
-			SET storage_engine=INNODB
+			SET storage_engine=MyISAM
 		}]
 	]);
 	$self->_run_sql(\@TABLES);
@@ -605,7 +605,7 @@ sub upgrade_from
 
 	$self->_run_sql([
 		force_innodb => [q{
-			SET storage_engine=INNODB
+			SET storage_engine=MyISAM
 		}]
 	]);
 
@@ -1097,85 +1097,85 @@ sub upgrade_17_to_18
 		# Convert to InnoDB
 		innodb_conversion => [
 		q{
-			ALTER TABLE field ENGINE=INNODB
+			ALTER TABLE field ENGINE=MyISAM
 		},
 		q{
-			ALTER TABLE gameslot ENGINE=INNODB
+			ALTER TABLE gameslot ENGINE=MyISAM
 		},
 		q{
-			ALTER TABLE league ENGINE=INNODB
+			ALTER TABLE league ENGINE=MyISAM
 		},
 		q{
-			ALTER TABLE league_gameslot_availability ENGINE=INNODB
+			ALTER TABLE league_gameslot_availability ENGINE=MyISAM
 		},
 		q{
-			ALTER TABLE leaguemembers ENGINE=INNODB
+			ALTER TABLE leaguemembers ENGINE=MyISAM
 		},
 		q{
-			ALTER TABLE leagueteams ENGINE=INNODB
+			ALTER TABLE leagueteams ENGINE=MyISAM
 		},
 		q{
-			ALTER TABLE member_id_sequence ENGINE=INNODB
+			ALTER TABLE member_id_sequence ENGINE=MyISAM
 		},
 		q{
-			ALTER TABLE multiplechoice_answers ENGINE=INNODB
+			ALTER TABLE multiplechoice_answers ENGINE=MyISAM
 		},
 		q{
-			ALTER TABLE person ENGINE=INNODB
+			ALTER TABLE person ENGINE=MyISAM
 		},
 		q{
-			ALTER TABLE player_availability ENGINE=INNODB
+			ALTER TABLE player_availability ENGINE=MyISAM
 		},
 		q{
-			ALTER TABLE preregistrations ENGINE=INNODB
+			ALTER TABLE preregistrations ENGINE=MyISAM
 		},
 		q{
-			ALTER TABLE question ENGINE=INNODB
+			ALTER TABLE question ENGINE=MyISAM
 		},
 		q{
-			ALTER TABLE registration_answers ENGINE=INNODB
+			ALTER TABLE registration_answers ENGINE=MyISAM
 		},
 		q{
-			ALTER TABLE registration_audit ENGINE=INNODB
+			ALTER TABLE registration_audit ENGINE=MyISAM
 		},
 		q{
-			ALTER TABLE registration_events ENGINE=INNODB
+			ALTER TABLE registration_events ENGINE=MyISAM
 		},
 		q{
-			ALTER TABLE registration_prereq ENGINE=INNODB
+			ALTER TABLE registration_prereq ENGINE=MyISAM
 		},
 		q{
-			ALTER TABLE registrations ENGINE=INNODB
+			ALTER TABLE registrations ENGINE=MyISAM
 		},
 		q{
-			ALTER TABLE schedule ENGINE=INNODB
+			ALTER TABLE schedule ENGINE=MyISAM
 		},
 		q{
-			ALTER TABLE score_entry ENGINE=INNODB
+			ALTER TABLE score_entry ENGINE=MyISAM
 		},
 		q{
-			ALTER TABLE score_reminder ENGINE=INNODB
+			ALTER TABLE score_reminder ENGINE=MyISAM
 		},
 		q{
-			ALTER TABLE team ENGINE=INNODB
+			ALTER TABLE team ENGINE=MyISAM
 		},
 		q{
-			ALTER TABLE team_request_player ENGINE=INNODB
+			ALTER TABLE team_request_player ENGINE=MyISAM
 		},
 		q{
-			ALTER TABLE team_spirit_answers ENGINE=INNODB
+			ALTER TABLE team_spirit_answers ENGINE=MyISAM
 		},
 		q{
-			ALTER TABLE teamroster ENGINE=INNODB
+			ALTER TABLE teamroster ENGINE=MyISAM
 		},
 		q{
-			ALTER TABLE variable ENGINE=INNODB
+			ALTER TABLE variable ENGINE=MyISAM
 		},
 		q{
-			ALTER TABLE waitinglist ENGINE=INNODB
+			ALTER TABLE waitinglist ENGINE=MyISAM
 		},
 		q{
-			ALTER TABLE waitinglistmembers ENGINE=INNODB
+			ALTER TABLE waitinglistmembers ENGINE=MyISAM
 		}],
 
 		# Add country field to person table
@@ -1282,7 +1282,7 @@ sub upgrade_18_to_19
 				game_id INTEGER NOT NULL default '0',
 				player_id INTEGER NOT NULL default '0',
 				PRIMARY KEY (game_id, player_id)
-			) ENGINE=INNODB;
+			) ENGINE=MyISAM;
 		}],
 
 		# Add incident reports table
@@ -1293,7 +1293,7 @@ sub upgrade_18_to_19
 				type VARCHAR( 128 ) NOT NULL ,
 				details TEXT NOT NULL ,
 				PRIMARY KEY ( game_id , team_id )
-			) ENGINE=INNODB;
+			) ENGINE=MyISAM;
 		}],
 	]);
 }
@@ -1316,7 +1316,7 @@ sub upgrade_19_to_20
 				game_id INTEGER NOT NULL default '0',
 				player_id INTEGER NOT NULL default '0',
 				PRIMARY KEY (game_id, player_id)
-			) ENGINE=INNODB;
+			) ENGINE=MyISAM;
 		}],
 
 		# Add incident reports table
@@ -1327,7 +1327,7 @@ sub upgrade_19_to_20
 				type VARCHAR( 128 ) NOT NULL ,
 				details TEXT NOT NULL ,
 				PRIMARY KEY ( game_id , team_id )
-			) ENGINE=INNODB;
+			) ENGINE=MyISAM;
 		}],
 
 		# 'rank' in leagueteams table is useless
