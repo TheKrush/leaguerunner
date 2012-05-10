@@ -839,7 +839,7 @@ sub fresh_install
 {
 	my ($self) = @_;
 	$self->_run_sql([
-		force_innodb => [q{
+		force_myisam => [q{
 			SET storage_engine=MyISAM
 		}]
 	]);
@@ -885,7 +885,7 @@ sub upgrade_from
 	}
 
 	$self->_run_sql([
-		force_innodb => [q{
+		force_myisam => [q{
 			SET storage_engine=MyISAM
 		}]
 	]);
@@ -1375,8 +1375,8 @@ sub upgrade_17_to_18
 			DELETE FROM variable WHERE name = 'wards'
 		}],
 
-		# Convert to INNODB
-		innodb_conversion => [
+		# Convert to MyISAM
+		myisam_conversion => [
 		q{
 			ALTER TABLE field ENGINE=MyISAM
 		},
