@@ -2,10 +2,10 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-	<title>{$title|default:$app_name}</title>
+	<title>{$app_name} : {$title}</title>
 	{include file="components/css.tpl"}
 	{include file="components/javascript.tpl"}
-	<link rel="shortcut icon" href="themes/{$site_theme}/logo.ico" />
+	<link rel="shortcut icon" href="{$base_url}/themes/{$site_theme}/logo.ico" />
 </head>
 <body class="one-sidebar">
 	<div id="page-wrapper">
@@ -14,7 +14,7 @@
 				<div id="branding-wrapper">
 					<div class="branding">
 						<div class="logo">
-							<a href="/" title="Home"><img src="themes/{$site_theme}/logo.png" alt="Home" /></a>
+							<a href="/" title="{$site_name}"><img src="{$base_url}/themes/{$site_theme}/logo.png" alt="{$site_name}" /></a>
 						</div> <!-- end logo -->
 						<div class="name-slogan-wrapper">
 							<h1 class="site-name"><a href="/" title="{$site_name}">{$site_name}</a></h1>
@@ -47,7 +47,7 @@
 						<div id="block-menu-menu-superfish" class="block block-menu">
 							<div class="content">
 							<ul class="menu">
-								<li class="first leaf"><a href="/" title="{$site_name}">Home</a></li>
+								<li class="first leaf"><a href="/" title="{$site_name}">{$site_name}</a></li>
 								<li class="last leaf"><a href="{$base_url}" title="Leaguerunner" class="active">Leaguerunner</a></li>
 							</ul>
 						</div>
