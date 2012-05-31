@@ -55,3 +55,8 @@ local_tz = "US/Eastern"
 ; Difference, in minutes, from the local timezone to the server timezone.
 ; Value is negative if server is to your west, positive if it's east.
 tz_adjust = 0
+
+[website]
+site_theme = "default"
+site_name = "Your Leaguerunner Site";
+site_slogan = "Your Leaguerunner Site Slogan"
