@@ -5,7 +5,7 @@
 	<title>{$title|default:$app_name}</title>
 	{include file="components/css.tpl"}
 	{include file="components/javascript.tpl"}
-	<link rel="shortcut icon" href="/suc_logo.ico" />
+	<link rel="shortcut icon" href="themes/{$site_theme}/logo.ico" />
 </head>
 <body class="one-sidebar">
 	<div id="page-wrapper">
@@ -14,7 +14,7 @@
 				<div id="branding-wrapper">
 					<div class="branding">
 						<div class="logo">
-							<a href="/" title="Home"><img src="/suc_logo.jpg" alt="Home" /></a>
+							<a href="/" title="Home"><img src="themes/{$site_theme}/logo.png" alt="Home" /></a>
 						</div> <!-- end logo -->
 						<div class="name-slogan-wrapper">
 							<h1 class="site-name"><a href="/" title="{$site_name}">{$site_name}</a></h1>
@@ -47,18 +47,8 @@
 						<div id="block-menu-menu-superfish" class="block block-menu">
 							<div class="content">
 							<ul class="menu">
-								<li class="first leaf"><a href="/" title="Sudbury Ultimate Club">Home</a></li>
-								<li class="leaf"><a href="/photos">Photos</a></li>
-								<li class="expanded"><a href="/about" title="Information about Sudbury Ultimate Club">About</a>
-								<ul class="menu">
-									<li class="first leaf"><a href="/content/rules" title="">Rules</a></li>
-									<li class="leaf"><a href="/content/bylaws" title="">Bylaws</a></li>
-									<li class="last leaf"><a href="/content/board" title="People currently looking after Sudbury Ultimate Club">The Board</a></li>
-								</ul></li>
-								<li class="leaf"><a href="/forum" title="Forums for Sudbury Ultimate Club">Forums</a></li>
-								<li class="leaf"><a href="/content/snowplate" title="Details about the Snowplate Tournament hosted by the Sudbury Ultimate Club">Snowplate</a></li>
-								<li class="leaf"><a href="/contact" title="">Contact</a></li>
-								<li class="last leaf"><a href="/leaguerunner" title="Leaguerunner" class="active">Leaguerunner</a></li>
+								<li class="first leaf"><a href="/" title="{$site_name}">Home</a></li>
+								<li class="last leaf"><a href="{$base_url}" title="Leaguerunner" class="active">Leaguerunner</a></li>
 							</ul>
 						</div>
 					</div>
