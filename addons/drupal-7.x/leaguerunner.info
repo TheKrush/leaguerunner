@@ -3,3 +3,5 @@ description = Authentication and Integration with the Leaguerunner System
 package = Administration
 core = 7.x
 configure = admin/config/system/leaguerunner
+version = "2.8.5"
+project = "leaguerunner"
