@@ -25,7 +25,7 @@
 				<div id="authorize">
 					<ul>
 					{if $session_valid}
-						<li class="first">Logged in as <a href="{lr_url path='person/view/`$session_userid`'}">{$session_fullname}</a></li>
+						<li class="first">Logged in as <a href="{lr_url path='person/view/'}{$session_userid}">{$session_fullname}</a></li>
 						<li class="last"><a href="{lr_url path=logout}">Logout</a></li>
 					{else}
 						<li class="first"><a href="{lr_url path=login}">Login</a></li>
