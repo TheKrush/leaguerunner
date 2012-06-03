@@ -43,6 +43,8 @@ class person_signwaiver extends Handler
 			default:
 				$this->template_name = 'pages/person/waiver.tpl';
 				$this->smarty->assign('next_page', $next);
+				$this->smarty->assign('app_org_name', variable_get('app_org_name', 'the league'));
+				$this->smarty->assign('app_org_short_name', variable_get('app_org_short_name', 'the league'));
 				$this->smarty->assign('waiver_text', $this->waiver_text);
 				$rc = true;
 		}

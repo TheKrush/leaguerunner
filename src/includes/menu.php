@@ -205,7 +205,8 @@ function menu_build( )
 	menu_add_child('_root', 'help', 'Help', array('link' => "docs/help", 'weight' => -25 ));
 
 	if(! $lr_session->is_valid()) {
-		menu_add_child('_root','login','Log In', array('link' => 'logout', 'weight' => '20'));
+		menu_add_child('_root','login','Log In', array('link' => 'login', 'weight' => '20'));
+		menu_add_child('_root','register','Register', array('link' => 'person/create', 'weight' => '20'));
 		return;
 	}
 

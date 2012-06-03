@@ -26,7 +26,7 @@
 				<h1 class='site-name'><a href="/" title="Home">{$site_name}</a></h1>
 				<!-- /site-name -->
 				<!-- slogan -->
-				<div class='site-slogan'>{$site_slogan}!</div>
+				<div class='site-slogan'>{$site_slogan}</div>
 				<!-- /slogan -->
 				<!-- /name and sloagan -->
 			</div>

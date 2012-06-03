@@ -1,3 +1,6 @@
+	<link rel="stylesheet" type="text/css" href="{$base_url}/themes/{$site_theme}/css/smoothness/jquery-ui-1.8.11.custom.css" />
+	<link rel="stylesheet" type="text/css" href="{$base_url}/themes/{$site_theme}/css/style.css" />
+	<link rel="stylesheet" type="text/css" href="{$base_url}/themes/{$site_theme}/css/suc-style.css" />
 	<style type="text/css" media="all">
 		@import url("http://activesocialsports.com/modules/system/system.base.css?m4x64y");
 		@import url("http://activesocialsports.com/modules/system/system.menus.css?m4x64y");
