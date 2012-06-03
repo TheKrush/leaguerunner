@@ -17,8 +17,11 @@
 		<div id="footer">
 			<div id="footer-region">
 				<div class="region region-footer">
-					<i>Powered by <a href="https://github.com/h07r0d/leaguerunner/wiki">Leaguerunner</a>, SUC'd version {$app_version}</i>
+					Powered by <a href="https://github.com/h07r0d/leaguerunner/wiki">Leaguerunner</a>, SUC'd version {$app_version}
 				</div>
+				<div class="rooplelogo">
+					<a href="http://www.roopletheme.com" title="RoopleTheme!" target="_blank"><img src="/themes/newsflash/RoopleThemeLogo.png" alt="RoopleTheme!"/></a>
+				</div><!-- /rooplelogo -->
 			</div>
 		</div>
 		<!-- /footer -->

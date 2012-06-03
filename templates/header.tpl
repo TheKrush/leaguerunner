@@ -23,8 +23,11 @@
 			<div id="name-and-slogan">
 				<!-- name and sloagan -->
 				<!-- site-name -->
-				<h1 class='site-name'> <a href="/" title="Home"> Active Social Sports </a> </h1>
+				<h1 class='site-name'><a href="/" title="Home">{$site_name}</a></h1>
 				<!-- /site-name -->
+				<!-- slogan -->
+				<div class='site-slogan'>{$site_slogan}!</div>
+				<!-- /slogan -->
 				<!-- /name and sloagan -->
 			</div>
 			<!-- navigation main/secondary menu -->
@@ -59,10 +62,12 @@
 						<h2 class="title">Navigation</h2>
 						<div class="content">
 							{$menu}
-							<ul class="menu">
-							</ul>
 						</div>
 					</div>
+					{if $session_valid}
+					{else}
+					<!-- user login -->
+					{/if}
 				</div>
 			</div>
 			<!-- /sidebar-left -->

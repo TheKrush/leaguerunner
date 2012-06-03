@@ -6,18 +6,18 @@
 	</div>
 	{/if}
 	<form name="login" action="{lr_url path='login'}" method="post">
-	<div id="form_login" style="display: block;">
+	<div id="form_login" style="display: block; width: 150px; text-align: center;">
 		<label for="username">Username</label>
-			<input type="text" name="edit[username]" id="username" style="width: 170px;" maxlength="50" value=""  /><br />
+			<input type="text" name="edit[username]" id="username" size="15" maxlength="50" value=""  /><br />
 
 		<label for="password">Password</label>
-			<input type="password" name="edit[password]" id="password" style="width: 170px;" maxlength="50" value=""  /><br />
+			<input type="password" name="edit[password]" id="password" size="15" maxlength="50" value=""  /><br />
 
-		<input type="checkbox" name="edit[remember_me]" value="1" />Keep me logged in on this computer?<br />
+		<input type="checkbox" name="edit[remember_me]" value="1" />Keep logged in?<br />
 
-		<input type="submit" name="Submit" value="Login" /><br />
+		<input type="submit" name="Submit" value="Log in" /><br />
 
-			<a href="{lr_url path='person/forgotpassword'}">Forgot your password?</a><br />
+			<a href="{lr_url path='person/forgotpassword'}">Request new password</a><br />
 	</div>
 	</form>
 </div>
