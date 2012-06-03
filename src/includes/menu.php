@@ -1,9 +1,9 @@
 <?php
-/** 
- * Add a child to a parent menu. 
+/**
+ * Add a child to a parent menu.
  * parentName, thisKey, and title are required
  * in $args, we can have:
- *   link (the URL we link to.  If absent, this is a pure container, 
+ *   link (the URL we link to.  If absent, this is a pure container,
  *         and this item will always be expanded if it has children)
  *   weight (lower = floats, higher = sinks)
  *   expanded (true = always open)
@@ -31,12 +31,12 @@ function menu_add_child( $parentName, $name, $title, $args = array() )
 		'weight'   => 0,  // Default weight
 		'children' => array(),
 		'expanded' => false,
-	); 
+	);
 
 	$_menu[$name] = array_merge($item, $args);
 
 	/* and add to children of parent if parent exists */
-	if($parentName) { 
+	if($parentName) {
 		$_menu[$parentName]['children'][] = $name;
 	}
 
@@ -100,7 +100,7 @@ function menu_render($parentKey = '_root', $depth = 0) {
 	foreach($parents as $key) {
 			$_menu[$key]['expanded'] = true;
 		}
-	
+
 	$active  = _menu_get_active($_GET["q"]);
 	$_menu[$active]['expanded'] = true;
 
@@ -112,7 +112,7 @@ function menu_render($parentKey = '_root', $depth = 0) {
 			 * become unreachable.
 			 */
 			$mustExpand = $_menu[$itemKey]['expanded'] || ($_menu[$itemKey]['children'] && !array_key_exists('link', $_menu[$itemKey]));
-			
+
 			if($mustExpand) {
 				$style = ($_menu[$itemKey]['children'] ? 'expanded' : 'leaf');
 			} else {
@@ -128,7 +128,7 @@ function menu_render($parentKey = '_root', $depth = 0) {
 			}
 			$output .= "</li>";
 		}
-		$output = "<ul>$output</ul>";
+		$output = "<ul class=\"menu\">$output</ul>";
 	}
 	return $output;
 }
@@ -146,7 +146,7 @@ function _menu_internal_sort($a, $b) {
 		return -1;
 	} else if ($a["weight"] > $b["weight"]) {
 		return 1;
-	} 
+	}
 
 	return $a["name"] < $b["name"] ? -1 : 1;
 }
@@ -383,7 +383,7 @@ function league_add_to_menu( &$league, $parent = 'league' )
 	}
 }
 
-function person_add_to_menu( &$person ) 
+function person_add_to_menu( &$person )
 {
 	global $lr_session;
 	if( ! ($lr_session->attr_get('user_id') == $person->user_id) ) {
@@ -442,7 +442,7 @@ function registration_add_to_menu( &$registration )
 /**
  * Add view/edit/delete links to the menu for the given team
  */
-function team_add_to_menu( &$team ) 
+function team_add_to_menu( &$team )
 {
 	global $lr_session;
 
@@ -456,7 +456,7 @@ function team_add_to_menu( &$team )
 		if($team->status != 'closed') {
 			menu_add_child($menu_name, "$menu_name/join",'join team', array('weight' => 0, 'link' => "team/roster/$team->team_id/" . $lr_session->attr_get('user_id')));
 		}
-	} 
+	}
 
 	menu_add_child($menu_name, "$menu_name/spirit", "spirit", array('weight' => 1, 'link' => "team/spirit/$team->team_id"));
 
@@ -488,7 +488,7 @@ function team_add_to_menu( &$team )
 /**
  * Add view/edit/delete links to the menu for the given event
  */
-function event_add_to_menu( &$event ) 
+function event_add_to_menu( &$event )
 {
 	global $lr_session;
 
@@ -516,7 +516,7 @@ function event_add_to_menu( &$event )
 /**
  * Add view/edit/delete links to the menu for the given field
  */
-function field_add_to_menu( &$field ) 
+function field_add_to_menu( &$field )
 {
 	global $lr_session;
 
