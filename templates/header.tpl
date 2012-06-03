@@ -5,7 +5,7 @@
 	<title>{$app_name} : {$title}</title>
 	{include file="components/css.tpl"}
 	{include file="components/javascript.tpl"}
-	<link rel="shortcut icon" href="{$base_url}/themes/{$site_theme}/logo.ico" />
+	<link rel="shortcut icon" href="{$base_url}/themes/logo.ico" />
 </head>
 <body class="html front not-logged-in one-sidebar sidebar-first page-node" >
 	<div id="skip-link">
